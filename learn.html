@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Waste Facility Locator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <script>history.scrollRestoration = "manual"</script>
+    <style>
+        #learning {
+            padding: 50px;
+            padding-bottom: 200px;
+            background-color: #ffffff; /* Already set to the desired color */
+            text-align: center;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            box-sizing: border-box;
+            overflow-y: auto;
+            margin-top: 40px; /* Adjusted to match #top height (previously 60px) */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 5px;
+          }
+          
+          .learn-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center cards horizontally */
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            
+          }
+          
+          .learn-card {
+            background: #6e88a2;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+          }
+          
+          .learn-card:hover {
+            transform: translateY(-10px);
+          }
+          
+          .learn-card i {
+            color: #1acc8d;
+            margin-bottom: 15px;
+          }
+          
+          .learn-card h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin: 10px 0;
+          }
+          
+          .learn-card p {
+            font-size: 1em;
+            color: #2c4b69;
+            line-height: 1.5;
+          }
+          
+          #learning #title {
+            margin: 0px 300px; /* 300px margins on left and right */
+            font-size: 24px; /* Font size as specified */
+            display: flex; /* Flex display for centering */
+            justify-content: center; /* Center the content horizontally */
+            margin-top: 20px; /* Adjust this value to move title down from nav bar */
+            margin-bottom: 50px;
+            /* Adjust this value to add space below title */
+          }
+          
+          #learning #title h2 {
+            color: #2c3e50; /* Consistent color with rest of site */
+          }
+          .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+          }
+          
+          .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            color: #333;
+          }
+          
+          .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+          }
+          
+      </style>
+  </head>
+  <body>
+    <!-- Top Navbar with Integrated Main Navigation -->
+    <div id="top">
+      <a href="./index.html" id="top-image">
+        <img src="logo.png">
+      </a>
+      
+      <nav id="nav">
+        <div class="menu-bar">
+          <div class="menu-tabs">
+            <li><a href="./index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+            <li><a href="./about.html"><i class="fa-solid fa-book-open"></i><span>About</span></a></li>
+            <li><a href="./learn.html"><i class="fa-solid fa-brain"></i><span>Learn</span></a></li>
+            <li><a href="./services.html"><i class="fa-solid fa-screwdriver-wrench"></i><span>Services</span></a></li>
+            <li><a href="./faq.html"><i class="fa-solid fa-circle-question"></i><span>FAQ</span></a></li>
+            <li><a href="./team.html"><i class="fa-solid fa-people-group"></i><span>Team</span></a></li>
+          </div>
+        </div>
+      </nav>
+    
+      <div class="top-login">
+        <ul>
+          <li><a href="#" onclick="login()" id="login-btn">Login</a></li>
+          <li><a href="#" onclick="register()" id="register-btn">Register</a></li>
+          <li><a href="#" onclick="Logout()" id="logout-btn">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <section id="learning">
+        <h2 id="title">List of E-Waste Devices and Their Harmful Elements</h2>
+        
+        <div class="learn-container">
+            <div class="learn-card">
+                <i class="fas fa-mobile-screen-button fa-3x"></i>
+                <h3>SmartPhones</h3>
+                <p>Smartphones contain several toxic substances that pose risks to both human health and the environment.</p>
+            </div>
+            <div class="learn-card">
+                <i class="fas fa-laptop fa-3x"></i>
+                <h3>Laptop</h3>
+                <p>Laptops include a range of hazardous materials.Laptops share similar toxic components.</p>
+            </div>
+            <div class="learn-card">
+                <i class="fas fa-snowflake fa-3x"></i>
+                <h3>Refrigerator</h3>
+                <p>Refrigerators, especially older models, contain substances like chlorofluorocarbons (CFCs) or hydrochlorofluorocarbons (HCFCs) used as refrigerants. </p>
+            </div>
+            <div class="learn-card">
+                <i class="fas fa-tv fa-3x"></i>
+                <h3>Television</h3>
+                <p>Televisions, particularly older CRT models, are among the most toxic electronics. Lead is heavily used in the glass tubes and solder, posing serious risks to neurological health.</p>
+            </div>
+            <div class="learn-card">
+                <i class="fas fa-plug fa-3x"></i>
+                <h3>Other</h3>
+                <p>The improper disposal of these devices, such as dumping in landfills or burning in informal recycling sites, leads to the release of these substances into the environment.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Modal Structure -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 id="modal-title"></h3>
+    <p id="modal-text"></p>
+  </div>
+</div>
+<script>
+  const modal = document.getElementById("modal");
+  const modalTitle = document.getElementById("modal-title");
+  const modalText = document.getElementById("modal-text");
+  const span = document.getElementsByClassName("close")[0];
+
+  const data = {
+    "SmartPhones": "lead (in solder)  -  causes neurological damage and  developmental issues in children., cadmium (in batteries) - Cadmium exposure damages the kidneys and bones. It's classified as a Group 1 carcinogen (cancer-causing) by the IARC., mercury (in screens) - Mercury affects the central nervous system and immune system. In pregnant women  it may cause developmental issues in the fetus., beryllium (in connectors) - Inhalation causes Chronic Beryllium Disease (CBD) a fatal lung condition. It can also lead to skin diseases., brominated flame retardants (in plastic) - Endocrine disruption and thyroid dysfunction as well as potential links to cancer. BFRs are also suspected neurotoxins., traces of arsenic - Arsenic exposure causes skin lesions and cardiovascular disease.",
+    "Laptop": "lead (solder) - Lead leaches into soil and water systems contaminating drinking water and agriculture., cadmium (batteries) - Cadmium accumulates in plants and aquatic lifev entering the food chain., mercury (LCD backlights) - Mercury vapor contaminates the air and bioaccumulates in fish and animals., beryllium (components) - Present in thermal pads and motherboards and connectors., chromium VI (metal coating) - Leaches into soil and groundwater affecting entire ecosystems., PVC/phthalates (insulation) - PVC releases dioxins when incinerated which are among the most toxic man-made chemicals.",
+    "Refrigerator": "CFCs/HCFCs/HFCs (refrigerants) - These refrigerants are potent greenhouse gases. CFCs also deplete the ozone layer  causing increased UV exposure which leads to skin cancer and ecological disruption., mercury (switches) - Found in tilt switches and relays in older units., lead (components) - Used in electronic components and solder., flame retardants (foam/plastics) - Present in insulation foam and plastic parts. Persistent organic pollutants (POPs) that resist degradation.",
+    "Television": "lead (glass/solder) - CRT monitors contain up to 2–3 kg of lead. Causes severe neurotoxicity and environmental contamination., cadmium (phosphors/LEDs) - Causes irreversible kidney and bone damage and is linked to lung cancer., mercury (LCD backlights) - Dangerous when released as vapor or into water systems., beryllium (circuits) - In switches and circuit boards., BFRs (plastic) - Flame retardants in plastic enclosures and internal components.",
+    "Other": "lead, cadmium, mercury, dioxins - Highly carcinogenic it will affect immune and reproductive systems cause developmental issues.,Tantalum(Rare Earth Metals) - Mining causes environmental destruction and exposure to dust can lead to fibrosis."
+  };
+
+  document.querySelectorAll(".learn-card").forEach(card => {
+    card.addEventListener("click", () => {
+      const title = card.querySelector("h3").innerText;
+      modalTitle.innerText = title;
+
+      const items = data[title].split(',').map(item => item.trim());
+      modalText.innerHTML = "<ul>" + items.map(i => `<li>${i}</li>`).join('') + "</ul>";
+
+      modal.style.display = "block";
+    });
+  });
+
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+
+
+
+  </body>
+</html>

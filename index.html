@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Waste Facility Locator & Rewards</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <script>history.scrollRestoration = "manual"</script>
+  </head>
+  <body>
+
+<!-- Top Navbar with Integrated Main Navigation -->
+<div id="top">
+  <a href="./index.html" id="top-image">
+    <img src="logo.png">
+  </a>
+  
+  <nav id="nav">
+    <div class="menu-bar">
+      <div class="menu-tabs">
+        <li><a href="./index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+        <li><a href="./about.html"><i class="fa-solid fa-book-open"></i><span>About</span></a></li>
+        <li><a href="./learn.html"><i class="fa-solid fa-brain"></i><span>Learn</span></a></li>
+        <li><a href="./services.html"><i class="fa-solid fa-screwdriver-wrench"></i><span>Services</span></a></li>
+        <li><a href="./faq.html"><i class="fa-solid fa-circle-question"></i><span>FAQ</span></a></li>
+        <li><a href="./team.html"><i class="fa-solid fa-people-group"></i><span>Team</span></a></li>
+      </div>
+    </div>
+  </nav>
+
+  <div class="top-login">
+    <ul>
+      <li><a href="#" onclick="login()" id="login-btn">Login</a></li>
+      
+      <li><a href="#" onclick="Logout()" id="logout-btn">Logout</a></li>
+      
+
+    </ul>
+  </div>
+</div>
+
+
+
+<!-- Hero Section -->
+<section id="hero">
+  <div class="recycle">
+    <img src="C:\xampp\htdocs\review\bgi3.png" alt="recycle" />
+  </div>
+  <div class="hero-text">
+    <p>Recycle Responsibly & Earn Rewards</p>
+    <h1>E-Waste Solutions</h1>
+    <div class="hero-btn">
+      <button class="hero-map-btn" onclick="openNearbyFacilities()">
+  <span>Find Nearest Facility</span>
+</button>
+
+      <button onclick="window.location.href='learn.html' "class="hero-info-btn">
+        <span>Learn About E-Waste</span>
+      </button>
+      <button onclick="register()" id="register-btn">
+        <span>Register your device</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Device Registration with Rewards -->
+  <div id="Register">
+    <div class="form">
+      <div class="container">
+<div class="formBox">
+            <div class="inputBox">
+              <input type="text" id="name" required>
+              <span>Your Full Name</span>
+            </div>
+            <div class="inputBox">
+              <select id="device-type" required>
+                <option value="">Select Device Type</option>
+                <option value="phone">Smartphone</option>
+                <option value="laptop">Laptop</option>
+                <option value="tablet">Tablet</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="inputBox">
+              <input type="text" id="device-company" required>
+              <span>Device Company</span>
+            </div>
+            <div class="inputBox">
+              <input type="text" id="device-model" required>
+              <span>Model Number</span>
+            </div>
+            <div class="inputBox">
+              <input type="text" id="mobile-number" required>
+              <span>Mobile Number</span>
+            </div>
+            <div class="inputBox-b">
+              <button type="submit" value="Register" id="submit" onclick="calculateReward()">Register & Get Points</button>
+            </div>
+            <div id="reward-points" style="display: none;">
+              <p>Your estimated reward points: <span id="points-value">0</span></p>
+            </div>
+          </div>
+
+        </div>
+      </div> 
+    </div> 
+  </div>
+
+
+  <!-- Login Form -->
+  <div id="login">
+    <div class="form">
+      <div class="container">
+        <div class="loginform">
+          <h2>Login</h2>
+          <div class="formBox">
+            <div class="inputBox">
+              <input type="text" placeholder="Email" id="email" required>
+            </div>
+            <div class="inputBox">
+              <input type="password" placeholder="Password" id="password" required>
+            </div>
+            <div class="inputBox-b">
+              <button type="submit" value="Login" id="submit-login">Login</button>
+            </div>
+          </div>
+          <div class="form-link">
+            <span>Don't have an account? <a href="#" class="link" onclick="signup()">Sign Up</a></span>
+          </div>
+        </div>
+      </div> 
+    </div> 
+  </div>
+
+  <!-- Signup Form -->
+  <div id="signup">
+    <div class="form">
+      <div class="container">
+        <div class="signupform">
+          <h2>Sign Up</h2>
+          <div class="formBox">
+            <div class="inputBox">
+              <input type="text" placeholder="Name" id="name-sign" required>
+            </div>  
+            <div class="inputBox">
+              <input type="email" placeholder="Email" id="email-sign" required>
+            </div>
+            <div class="inputBox">
+              <input type="password" placeholder="Password" id="password-sign" required>
+            </div>
+            <div class="inputBox">
+              <input type="text" placeholder="Confirm Password" id="confirm-pass" required>
+            </div>
+            <div class="inputBox-b">
+              <button type="submit" value="Register" id="submit-sign">Create Account</button>
+            </div>
+          </div>
+          <div class="form-link">
+            <span>Already Have an Account <a href="#" class="link" onclick="login()">Login</a></span>
+          </div>
+        </div>
+      </div> 
+    </div> 
+  </div>
+</section>
+
+
+</body>
+<script src="script.js"></script>
+<script type="module" src="register.js"></script>
+<script>
+  function calculateReward() {
+    const deviceType = document.getElementById('device-type').value;
+    let points = 0;
+    
+    switch(deviceType) {
+      case 'phone': points = 50; break;
+      case 'laptop': points = 100; break;
+      case 'tablet': points = 75; break;
+      case 'other': points = 25; break;
+    }
+    
+    document.getElementById('points-value').textContent = points;
+    document.getElementById('reward-points').style.display = 'block';
+  }
+
+ 
+  
+
+
+</script>
+</html>

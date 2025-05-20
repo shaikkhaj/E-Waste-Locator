@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Waste Facility Locator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <script>history.scrollRestoration = "manual"</script>
+  </head>
+  <body>
+
+<!-- Top Navbar with Integrated Main Navigation -->
+<div id="top">
+    <a href="./index.html" id="top-image">
+      <img src="logo.png">
+    </a>
+    
+    <nav id="nav">
+      <div class="menu-bar">
+        <div class="menu-tabs">
+          <li><a href="./index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+          <li><a href="./about.html"><i class="fa-solid fa-book-open"></i><span>About</span></a></li>
+          <li><a href="./learn.html"><i class="fa-solid fa-brain"></i><span>Learn</span></a></li>
+          <li><a href="./services.html"><i class="fa-solid fa-screwdriver-wrench"></i><span>Services</span></a></li>
+          <li><a href="./faq.html"><i class="fa-solid fa-circle-question"></i><span>FAQ</span></a></li>
+          <li><a href="./team.html"><i class="fa-solid fa-people-group"></i><span>Team</span></a></li>
+        </div>
+      </div>
+    </nav>
+  
+    <div class="top-login">
+      <ul>
+        <li><a href="#" onclick="login()" id="login-btn">Login</a></li>
+        <li><a href="#" onclick="register()" id="register-btn">Register</a></li>
+        <li><a href="#" onclick="Logout()" id="logout-btn">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+  
+
+<!-- Pop-up Section -->
+<div id="popup">
+  <div id="popupc">
+    </div>
+    <div id="close">
+    <i onclick="hidePopup()" class="fa-solid fa-circle-xmark fa-xl"> Close</i>
+  </div>
+</div>
+
+<!-- Pop-up Section -->
+
+<!-- Service Section -->
+<section id="services">
+    <h2 id="title">The Services that are provided</h2>
+    
+    <div class="services-container">
+        <div class="service-card">
+            <i class="fa-solid fa-truck fa-3x"></i>
+            <h3>E-Waste Collection</h3>
+            <p>Convenient pickup services for households and businesses to responsibly dispose of electronics.</p>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-tools fa-3x"></i>
+            <h3>Device Refurbishment</h3>
+            <p>Repairing and upgrading old electronics for reuse, extending their lifecycle.</p>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-shield-alt fa-3x"></i>
+            <h3>Data Destruction</h3>
+            <p>Secure data wiping and physical destruction services to protect your privacy.</p>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-industry fa-3x"></i>
+            <h3>Material Recovery</h3>
+            <p>Extracting valuable metals and components for recycling and sustainable manufacturing.</p>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-chalkboard-teacher fa-3x"></i>
+            <h3>Eco-Education</h3>
+            <p>Workshops and programs to raise awareness about e-waste management.</p>
+        </div>
+    </div>
+</section>
+  
+<!-- Service Section -->
+</body>
+<script src="script.js"></script>
+<script type="module" src="register.js"></script>
+</html>

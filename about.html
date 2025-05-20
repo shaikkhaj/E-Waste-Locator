@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Waste Facility Locator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <script>history.scrollRestoration = "manual"</script>
+  </head>
+  <body>
+
+
+<!-- Top Navbar with Integrated Main Navigation -->
+<div id="top">
+    <a href="./index.html" id="top-image">
+      <img src="logo.png">
+    </a>
+    
+    <nav id="nav">
+      <div class="menu-bar">
+        <div class="menu-tabs">
+          <li><a href="./index.html"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
+          <li><a href="./about.html"><i class="fa-solid fa-book-open"></i><span>About</span></a></li>
+          <li><a href="./learn.html"><i class="fa-solid fa-brain"></i><span>Learn</span></a></li>
+          <li><a href="./services.html"><i class="fa-solid fa-screwdriver-wrench"></i><span>Services</span></a></li>
+          <li><a href="./faq.html"><i class="fa-solid fa-circle-question"></i><span>FAQ</span></a></li>
+          <li><a href="./team.html"><i class="fa-solid fa-people-group"></i><span>Team</span></a></li>
+        </div>
+      </div>
+    </nav>
+  
+    <div class="top-login">
+      <ul>
+        <li><a href="#" onclick="login()" id="login-btn">Login</a></li>
+        <li><a href="#" onclick="register()" id="register-btn">Register</a></li>
+        <li><a href="#" onclick="Logout()" id="logout-btn">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+  
+
+<!-- Pop-up Section -->
+<div id="popup">
+  <div id="popupc">
+    </div>
+    <div id="close">
+    <i onclick="hidePopup()" class="fa-solid fa-circle-xmark fa-xl"> Close</i>
+  </div>
+</div>
+
+<!-- Pop-up Section -->
+
+<!-- About Section -->
+<section id="about">
+    <div class="header">
+      <h3>About E-Waste Facility</h3>
+      <hr class="line" />
+    </div>
+    <div class="content">
+      <div class="feature1">
+        <i class="icon fa fa-sun"></i>
+        <h6>WHO E-WASTE FACILITY ARE!</h6>
+        <h4>New Age Recyclers</h4>
+        <p>We are a new age techno-commercial E-waste recycling expert, enabling the environmental value-chain for all.</p>
+      </div>
+      <div class="feature2" id="second">
+        <i class="icon fa fa-recycle"></i>
+        <h6>WHAT E-WASTE FACILITY DO!</h6>
+        <h4>Recycling Solutions</h4>
+        <p>All The Precious Materials Inside Your Device.</p>
+      </div>
+      <div class="feature3" >
+        <i class="icon fa fa-seedling"></i>
+        <h6>OUR GOAL</h6>
+        <h4>Environmental Sustainability</h4>
+        <p>We keep the environment first and bring in the purpose to address related issues and build a co-existing ecology.</p>
+      </div>
+    </div>
+    <!-- New Impact Section replacing counter -->
+    <div class="impact">
+      <div class="impact-item">
+        <i class="fa-solid fa-globe"></i>
+        <h4>Global Reach</h4>
+        <p>Operating in multiple areas to make e-waste recycling accessible to everyone.</p>
+      </div>
+      <div class="impact-item">
+        <i class="fa-solid fa-leaf"></i>
+        <h4>Green Technology</h4>
+        <p>Using cutting-edge eco-friendly methods to process electronic waste.</p>
+      </div>
+      <div class="impact-item">
+        <i class="fa-solid fa-hands-helping"></i>
+        <h4>Community Support</h4>
+        <p>Partnering with local communities to create sustainable job opportunities.</p>
+      </div>
+    </div>
+</section>
+  
+<!-- About Section -->
+
+</body>
+<script src="script.js"></script>
+<script type="module" src="register.js"></script>
+</html>
